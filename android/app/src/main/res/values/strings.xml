@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Opulent Dating</string>
+
+    <string name="facebook_app_id">000xxx000</string>
+    <string name="fb_login_protocol_scheme">fb000xx00000</string>
+    <string name="facebook_client_token">00000000xxx00000</string>
+
+
+</resources>

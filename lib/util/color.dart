@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+// Color primaryColor = Color(0xffff3a5a);
+// Color secondryColor = Colors.grey;
+Color primaryColor = const Color(0xffBFD469);
+//Color secondryColor = Color(0xffDCE7AC);
+Color secondryColor = const Color.fromARGB(255, 68, 71, 54);
+Color darkPrimaryColor = const Color(0x22ff3a5a);
+Color textColor = Colors.white;
+Color black = const Color.fromARGB(237, 20, 16, 16);
+Color primaryColorlite = const Color(0xfff5f5f5);
+Color yellolite = const Color(0xfff2f2c9);
+Color containerback = Color.fromRGBO(242, 230, 225, 0.059);
+Color newtextcolor = const Color(0xff6B7347);
+Color tcolor = const Color(0xff444444);
+Color bluecolor = const Color(0xff2691E5);
+Color teccolor = const Color(0xff909E4F);
+Color cardcolor = const Color(0xffD8E4A4);
+//new changes color
+Color btncolor = const Color(0xff00AFEF);
+Color backcolor = const Color(0xffEDFAFF);
+Color white = const Color(0xffFFFFFF);
+Color intrestcolor = const Color(0xff61D5FF);
+Color pink = const Color(0xffE05085);
+Color profileback = const Color(0xff00BBFF);
+Color lightgrey = const Color(0xff27465E);
+Color cardback = const Color(0xffD9D9D9);
+Color callcolor = const Color(0xffE0E0E0);
+Color recivedcolor = const Color(0xffEFE6E6);
+Color massagecolor = const Color(0xffE5E6E9);
+Color matchcolor = const Color(0xff575757);
+Color chatcolor = const Color(0xff8A91A8);
+Color extrawhite = const Color(0xffEDEEE9);
