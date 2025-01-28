@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, file_names, avoid_print, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_geocoder/geocoder.dart';
+// import 'package:flutter_geocoder/geocoder.dart';
 import 'package:flutter_mapbox_autocomplete/flutter_mapbox_autocomplete.dart';
 import 'package:hookup4u/Screens/seach_location.dart';
 import 'package:hookup4u/util/color.dart';
@@ -67,6 +67,7 @@ class _UpdateLocationState extends State<UpdateLocation> {
         child: MapBoxAutoCompleteWidget(
           language: 'en',
           closeOnSelect: false,
+          country: 'In',
           apiKey: mapboxApi,
           limit: 10,
           hint: 'Enter your city name'.tr().toString(),
@@ -92,33 +93,33 @@ Future<Map?> getLocationCoordinates() async {
       }
     });
     final coordinates = await location.getLocation();
-    return await coordinatesToAddress(
-      latitude: coordinates.latitude,
-      longitude: coordinates.longitude,
-    );
+    // return await coordinatesToAddress(
+    //   latitude: coordinates.latitude,
+    //   longitude: coordinates.longitude,
+    // );
   } catch (e) {
     print(e);
     return null;
   }
 }
 
-Future coordinatesToAddress({latitude, longitude}) async {
-  try {
-    Map<String, dynamic> obj = {};
-    final coordinates = Coordinates(latitude, longitude);
-    List<Address> result =
-        await Geocoder.local.findAddressesFromCoordinates(coordinates);
-    String currentAddress =
-        "${result.first.locality ?? ''} ${result.first.subLocality ?? ''} ${result.first.subAdminArea ?? ''} ${result.first.countryName ?? ''}, ${result.first.postalCode ?? ''}";
+// Future coordinatesToAddress({latitude, longitude}) async {
+//   try {
+//     Map<String, dynamic> obj = {};
+//     final coordinates = Coordinates(latitude, longitude);
+//     List<Address> result =
+//         await Geocoder.local.findAddressesFromCoordinates(coordinates);
+//     String currentAddress =
+//         "${result.first.locality ?? ''} ${result.first.subLocality ?? ''} ${result.first.subAdminArea ?? ''} ${result.first.countryName ?? ''}, ${result.first.postalCode ?? ''}";
 
-    print(currentAddress);
-    obj['PlaceName'] = currentAddress;
-    obj['latitude'] = latitude;
-    obj['longitude'] = longitude;
+//     print(currentAddress);
+//     obj['PlaceName'] = currentAddress;
+//     obj['latitude'] = latitude;
+//     obj['longitude'] = longitude;
 
-    return obj;
-  } catch (_) {
-    print(_);
-    return null;
-  }
-}
+//     return obj;
+//   } catch (_) {
+//     print(_);
+//     return null;
+//   }
+// }

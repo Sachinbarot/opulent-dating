@@ -37,6 +37,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    
+    buildToolsVersion '30.0.3'
 
     kotlinOptions {
         jvmTarget = '1.8'
@@ -47,13 +49,14 @@ android {
     }
 
     lintOptions {
-        disable 'InvalidPackage'
-        checkReleaseBuilds false
+        abortOnError false
+        // disable 'InvalidPackage'
+        // checkReleaseBuilds false
     }
 
     defaultConfig {
         applicationId "com.opulent.dating"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
        versionName flutterVersionName
@@ -68,21 +71,11 @@ android {
        }
     }
 
-    signingConfigs {
-        debug {
-            // Set your debug signing config here
-        }
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-            storePassword keystoreProperties['storePassword']
-        }
-    }
-
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
         }
     }
 

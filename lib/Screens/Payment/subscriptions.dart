@@ -94,8 +94,10 @@ class _SubscriptionState extends State<Subscription> {
         .where('status', isEqualTo: true)
         .get()
         .then((value) {
+      print(value);
       packageId.addAll(value.docs.map((e) => e['id']));
     });
+    print("Package Id's: ==>>$packageId");
 
     return packageId;
   }
@@ -180,6 +182,12 @@ class _SubscriptionState extends State<Subscription> {
                 },
               ),
             ),
+            // TextButton(
+            //   child: Text("Fetch"),
+            //   onPressed: () {
+            //     _fetchPackageIds();
+            //   },
+            // ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
@@ -304,191 +312,188 @@ class _SubscriptionState extends State<Subscription> {
                     height: 32,
                   ),
 
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => PremiumScreen()));
-                    },
-                    child: plancards(
-                        context,
-                        'Premium',
-                        'Unlock all of our features to be in complete control of your experience',
-                        'Upgrade From 100.00 INR',
-                        bluecolor),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => const BoostScreen()));
-                    },
-                    child: plancards(
-                        context,
-                        'Boost ',
-                        'Unlock all of our features to be in complete control of your experience',
-                        'Upgrade From 100.00 INR',
-                        pink),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          CupertinoPageRoute(
-                              builder: (context) => const PremiumPlusScreen()));
-                    },
-                    child: plancards(
-                        context,
-                        'Premium Plus ',
-                        'Unlock all of our features to be in complete control of your experience',
-                        'Upgrade From 100.00 INR',
-                        bluecolor),
-                  ),
+                  // InkWell(
+                  //   splashColor: Colors.transparent,
+                  //   highlightColor: Colors.transparent,
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         CupertinoPageRoute(
+                  //             builder: (context) => PremiumScreen()));
+                  //   },
+                  //   child: plancards(
+                  //       context,
+                  //       'Premium',
+                  //       'Unlock all of our features to be in complete control of your experience',
+                  //       'Upgrade From 100.00 INR',
+                  //       bluecolor),
+                  // ),
+                  // const SizedBox(
+                  //   height: 32,
+                  // ),
+                  // InkWell(
+                  //   splashColor: Colors.transparent,
+                  //   highlightColor: Colors.transparent,
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         CupertinoPageRoute(
+                  //             builder: (context) => const BoostScreen()));
+                  //   },
+                  //   child: plancards(
+                  //       context,
+                  //       'Boost ',
+                  //       'Unlock all of our features to be in complete control of your experience',
+                  //       'Upgrade From 100.00 INR',
+                  //       pink),
+                  // ),
+                  // const SizedBox(
+                  //   height: 32,
+                  // ),
+                  // InkWell(
+                  //   splashColor: Colors.transparent,
+                  //   highlightColor: Colors.transparent,
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         CupertinoPageRoute(
+                  //             builder: (context) => const PremiumPlusScreen()));
+                  //   },
+                  //   child: plancards(
+                  //       context,
+                  //       'Premium Plus ',
+                  //       'Unlock all of our features to be in complete control of your experience',
+                  //       'Upgrade From 100.00 INR',
+                  //       bluecolor),
+                  // ),
 
                   const SizedBox(
                     height: 40,
                   ),
 
-                  // _isLoading
-                  //     ? SizedBox(
-                  //         height: MediaQuery.of(context).size.width * .8,
-                  //         child: Center(
-                  //           child: CircularProgressIndicator(
-                  //               valueColor: AlwaysStoppedAnimation<Color>(
-                  //                   primaryColor)),
-                  //         ),
-                  //       )
-                  //     : products.length > 0
-                  //         ? Stack(
-                  //             alignment: Alignment.bottomCenter,
-                  //             children: [
-                  //               Align(
-                  //                 alignment: Alignment.center,
-                  //                 child: Transform.rotate(
-                  //                   angle: -pi / 2,
-                  //                   child: Container(
-                  //                     width:
-                  //                         MediaQuery.of(context).size.height *
-                  //                             .16,
-                  //                     height:
-                  //                         MediaQuery.of(context).size.width *
-                  //                             .8,
-                  //                     decoration: BoxDecoration(
-                  //                         border: Border.all(
-                  //                             width: 2, color: btncolor)),
-                  //                     child: Center(
-                  //                       child: (CupertinoPicker(
-                  //                           squeeze: 1.4,
-                  //                           looping: true,
-                  //                           magnification: 1.08,
-                  //                           offAxisFraction: -.2,
-                  //                           backgroundColor: Colors.white,
-                  //                           scrollController:
-                  //                               FixedExtentScrollController(
-                  //                                   initialItem: 0),
-                  //                           itemExtent: 100,
-                  //                           onSelectedItemChanged: (value) {
-                  //                             setState(() {
-                  //                               selectedProduct =
-                  //                                   products[value];
-                  //                             });
-                  //                           },
-                  //                           children: products.map((product) {
-                  //                             var iosP;
-                  //                             product
-                  //                                 as GooglePlayProductDetails;
-                  //                             if (Platform.isIOS) {
-                  //                               iosP = product
-                  //                                   as AppStoreProductDetails;
-                  //                             }
-                  //                             return Transform.rotate(
-                  //                               angle: pi / 2,
-                  //                               child: Center(
-                  //                                 child: Column(
-                  //                                   children: [
-                  //                                     productList(
-                  //                                       context: context,
-                  //                                       product: product,
-                  //                                       interval: Platform.isIOS
-                  //                                           ? getInterval(
-                  //                                               product)
-                  //                                           : getIntervalAndroid(
-                  //                                               product),
-                  //                                       intervalCount: Platform
-                  //                                               .isIOS
-                  //                                           ? iosP
-                  //                                               .skProduct
-                  //                                               .subscriptionPeriod!
-                  //                                               .numberOfUnits
-                  //                                               .toString()
-                  //                                           : product
-                  //                                               .productDetails
-                  //                                               .subscriptionOfferDetails
-                  //                                               .toString()
-                  //                                               .split("")[1],
-                  //                                       price: product.price,
-                  //                                       onTap: () {
-                  //                                         null;
-                  //                                       },
-                  //                                     ),
-                  //                                   ],
-                  //                                 ),
-                  //                               ),
-                  //                             );
-                  //                           }).toList())),
-                  //                     ),
-                  //                   ),
-                  //                 ),
-                  //               ),
-                  //               selectedProduct != null
-                  //                   ? Center(
-                  //                       child: ListTile(
-                  //                         title: Text(
-                  //                           selectedProduct!.price,
-                  //                           textAlign: TextAlign.center,
-                  //                         ),
-                  //                         subtitle: Text(
-                  //                           selectedProduct!.description,
-                  //                           textAlign: TextAlign.center,
-                  //                         ),
-                  //                         trailing: Text(
-                  //                             "${products.indexOf(selectedProduct!) + 1}/${products.length}"),
-                  //                       ),
-                  //                     )
-                  //                   : Container()
-                  //             ],
-                  //           )
-                  //         : SizedBox(
-                  //             height: MediaQuery.of(context).size.width * .8,
-                  //             child: Center(
-                  //               child: Text(
-                  //                 "No Active Product Found!!".tr().toString(),
-                  //                 style: const TextStyle(
-                  //                   fontFamily: AppStrings.fontname,
-                  //                 ),
-                  //               ),
-                  //             ),
-                  //           )
-               
-               
+                  _isLoading
+                      ? SizedBox(
+                          height: MediaQuery.of(context).size.width * .8,
+                          child: Center(
+                            child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                    primaryColor)),
+                          ),
+                        )
+                      : products.length > 0
+                          ? Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: Transform.rotate(
+                                    angle: -pi / 2,
+                                    child: Container(
+                                      width:
+                                          MediaQuery.of(context).size.height *
+                                              .16,
+                                      height:
+                                          MediaQuery.of(context).size.width *
+                                              .8,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              width: 2, color: btncolor)),
+                                      child: Center(
+                                        child: (CupertinoPicker(
+                                            squeeze: 1.4,
+                                            looping: true,
+                                            magnification: 1.08,
+                                            offAxisFraction: -.2,
+                                            backgroundColor: Colors.white,
+                                            scrollController:
+                                                FixedExtentScrollController(
+                                                    initialItem: 0),
+                                            itemExtent: 100,
+                                            onSelectedItemChanged: (value) {
+                                              setState(() {
+                                                selectedProduct =
+                                                    products[value];
+                                              });
+                                            },
+                                            children: products.map((product) {
+                                              var iosP;
+                                              product
+                                                  as GooglePlayProductDetails;
+                                              if (Platform.isIOS) {
+                                                iosP = product
+                                                    as AppStoreProductDetails;
+                                              }
+                                              return Transform.rotate(
+                                                angle: pi / 2,
+                                                child: Center(
+                                                  child: Column(
+                                                    children: [
+                                                      productList(
+                                                        context: context,
+                                                        product: product,
+                                                        interval: Platform.isIOS
+                                                            ? getInterval(
+                                                                product)
+                                                            : getIntervalAndroid(
+                                                                product),
+                                                        intervalCount: Platform
+                                                                .isIOS
+                                                            ? iosP
+                                                                .skProduct
+                                                                .subscriptionPeriod!
+                                                                .numberOfUnits
+                                                                .toString()
+                                                            : product
+                                                                .productDetails
+                                                                .subscriptionOfferDetails
+                                                                .toString()
+                                                                .split("")[1],
+                                                        price: product.price,
+                                                        onTap: () {
+                                                          null;
+                                                        },
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              );
+                                            }).toList())),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                selectedProduct != null
+                                    ? Center(
+                                        child: ListTile(
+                                          title: Text(
+                                            selectedProduct!.price,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          subtitle: Text(
+                                            selectedProduct!.description,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          trailing: Text(
+                                              "${products.indexOf(selectedProduct!) + 1}/${products.length}"),
+                                        ),
+                                      )
+                                    : Container()
+                              ],
+                            )
+                          : SizedBox(
+                              height: MediaQuery.of(context).size.width * .8,
+                              child: Center(
+                                child: Text(
+                                  "No Active Product Found!!".tr().toString(),
+                                  style: const TextStyle(
+                                    fontFamily: AppStrings.fontname,
+                                  ),
+                                ),
+                              ),
+                            )
                 ],
               ),
             ),
-            
 
             // Platform.isIOS
             //     ? InkWell(

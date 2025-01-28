@@ -60,7 +60,6 @@ class _IncomingState extends State<Incoming> with TickerProviderStateMixin {
         onWillPop: _onWillPop,
         child: Scaffold(
           backgroundColor: Colors.white,
-         
           body: Center(
             child: StreamBuilder<QuerySnapshot>(
               stream: callRef
@@ -69,7 +68,6 @@ class _IncomingState extends State<Incoming> with TickerProviderStateMixin {
                   .snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
-             
                 if (!snapshot.hasData) {
                   return Container();
                 } else {
@@ -81,7 +79,6 @@ class _IncomingState extends State<Incoming> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                        
                           AnimatedBuilder(
                               animation: CurvedAnimation(
                                   parent: _controller,
@@ -97,8 +94,6 @@ class _IncomingState extends State<Incoming> with TickerProviderStateMixin {
                                       _buildContainer(200 * _controller.value),
                                       _buildContainer(250 * _controller.value),
                                       _buildContainer(300 * _controller.value),
-                                     
-
                                       CircleAvatar(
                                         backgroundColor: Colors.grey,
                                         radius: 60,

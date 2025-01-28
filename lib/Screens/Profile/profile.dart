@@ -609,6 +609,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:hookup4u/Screens/Calling/utils/strings.dart';
 import 'package:hookup4u/Screens/Information.dart';
 import 'package:hookup4u/Screens/Payment/paymentDetails.dart';
+import 'package:hookup4u/Screens/Payment/premium.dart';
 import 'package:hookup4u/Screens/Payment/subscriptions.dart';
 import 'package:hookup4u/Screens/Profile/EditProfile.dart';
 import 'package:hookup4u/Screens/Profile/settings.dart';
@@ -1164,9 +1165,7 @@ class _ProfileState extends State<Profile> {
                   } else {
                     Navigator.push(
                       context,
-                      CupertinoPageRoute(
-                          builder: (context) => Subscription(
-                              widget.currentUser, null, widget.items)),
+                      CupertinoPageRoute(builder: (context) => PremiumScreen()),
                     );
                   }
                 },

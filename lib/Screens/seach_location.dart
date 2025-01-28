@@ -19,7 +19,7 @@ class SearchLocation extends StatefulWidget {
 //Add here your mapbox token under ""
 //String mapboxApi = "<----- Add here your mapbox token-->";
 String mapboxApi =
-    "pk.eyJ1Ijoic2NvdGhpcyIsImEiOiJjaWp1Y2ltYmUwMDBicmJrdDQ4ZDBkaGN4In0.sbihZCZJ56-fsFNKHXF8YQ";
+    "sk.eyJ1Ijoic2FjaGluc3BpcGwiLCJhIjoiY20ya2hkMGZkMDE5bjJrczE0eHc1cDlxNCJ9.dat4JUoWu-WvQXoDVzVngw";
 
 class _SearchLocationState extends State<SearchLocation> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -85,12 +85,14 @@ class _SearchLocationState extends State<SearchLocation> {
                           helperStyle:
                               TextStyle(color: secondryColor, fontSize: 15),
                         ),
+                        onChanged: (value) {},
                         controller: _city,
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => MapBoxAutoCompleteWidget(
                                 language: 'en',
+                                country: 'IN',
                                 closeOnSelect: true,
                                 apiKey: mapboxApi,
                                 limit: 10,

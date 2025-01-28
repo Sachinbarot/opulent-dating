@@ -22,7 +22,7 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseAppCheck.instance.activate();
-  await FirebaseNotificationService.initializeService();
+  // await FirebaseNotificationService.initializeService();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,

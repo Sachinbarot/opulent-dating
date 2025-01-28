@@ -13,7 +13,7 @@ import 'package:hookup4u/Screens/commanbtn/commanbutton.dart';
 import 'package:hookup4u/ads/ads.dart';
 import 'package:hookup4u/models/user_model.dart' as userD;
 import 'package:hookup4u/util/color.dart';
-import 'package:share/share.dart';
+// import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'UpdateNumber.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -465,8 +465,8 @@ class _SettingsState extends State<Settings> {
                   highlightColor: Colors.transparent,
                   onTap: () {
                     if (isCardEnabled) {
-                      Share.share('check out my website ',
-                          subject: 'Look what I made!');
+                      // Share.share('check out my website ',
+                      //     subject: 'Look what I made!');
                     }
                   },
                   child: Padding(

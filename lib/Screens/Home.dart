@@ -101,6 +101,10 @@ class _CardPicturesState extends State<CardPictures>
 
   @override
   void initState() {
+    print(
+        "Users => ${FirebaseFirestore.instance.collection("Users").snapshots().first.then((value) {
+      print("Something => ${value.docs[0]['UserName']}");
+    })}");
     print(matches);
     FirebaseMessaging.instance.getToken().then((token) {
       print('token)))))))))$token');
