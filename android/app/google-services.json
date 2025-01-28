@@ -1,14 +1,13 @@
 {
   "project_info": {
-    "project_number": "685508843663",
-    "firebase_url": "https://datingopulent-default-rtdb.firebaseio.com",
-    "project_id": "datingopulent",
-    "storage_bucket": "datingopulent.appspot.com"
+    "project_number": "17326324397",
+    "project_id": "testopu-7abe1",
+    "storage_bucket": "testopu-7abe1.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:685508843663:android:4702cf0189f448a19978fa",
+        "mobilesdk_app_id": "1:17326324397:android:610f143729458835c7e424",
         "android_client_info": {
           "package_name": "com.opulent.dating"
         }
@@ -16,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD2SlTwjw6-VEmBofspAtAWXmRKuiIZIbE"
+          "current_key": "AIzaSyBKhiOp-Ubb2sulkKsUU0pvVgitBDzjPeo"
         }
       ],
       "services": {
