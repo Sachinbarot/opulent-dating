@@ -57,7 +57,7 @@ class _GenderState extends State<Gender> {
             child: Column(
               children: [
                 Text(
-                  "What kind of friends?".tr().toString(),
+                  "My Gender Is".tr().toString(),
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w700,
@@ -67,7 +67,7 @@ class _GenderState extends State<Gender> {
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 15, bottom: 20),
                   child: Text(
-                    'choose the kind of friends you want to make on  opulent .you can change this later.',
+                    'choose your gender here on opulent.you can not change this later.',
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w500,

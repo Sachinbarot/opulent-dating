@@ -5,6 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:hookup4u/Screens/Calling/utils/strings.dart';
 import 'package:hookup4u/Screens/Profile/intrestedscreen.dart';
+import 'package:hookup4u/Screens/Profile/updateintrestscreen.dart';
 import 'package:hookup4u/Screens/commanbtn/commanbutton.dart';
 import 'package:hookup4u/Screens/seach_location.dart';
 import 'package:image/image.dart' as i;
@@ -260,6 +261,12 @@ class EditProfileState extends State<EditProfile> {
                       setState(() {
                         selectedLanguage = languageOptions[index];
                         editInfo.addAll({'language': selectedLanguage});
+                        FirebaseFirestore.instance
+                            .collection("Users")
+                            .doc("l6vJFomChbMGP7G4fK45mOc8jJy1")
+                            .update({
+                          'Language': selectedLanguage,
+                        });
                       });
                       Navigator.of(context).pop();
                     },
@@ -2158,10 +2165,12 @@ class EditProfileState extends State<EditProfile> {
                                                 context,
                                                 CupertinoPageRoute(
                                                     builder: (context) =>
-                                                        MyInterests(
+                                                        UpdateMyInterests(
                                                           userData: widget
                                                               .currentUser
                                                               .toMap(),
+                                                          currentUser: widget
+                                                              .currentUser,
                                                         )));
                                           },
                                           child: const Icon(

@@ -27,7 +27,7 @@ Future<void> main() async {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]).then((_) {
-    InAppPurchaseAndroidPlatformAddition.enablePendingPurchases();
+    InAppPurchaseAndroidPlatformAddition.enablePendingPurchase;
     runApp(const MyApp());
   });
 }

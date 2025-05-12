@@ -6,21 +6,26 @@ import 'package:flutter/material.dart';
 import 'package:hookup4u/Screens/Calling/utils/strings.dart';
 import 'package:hookup4u/Screens/commanbtn/commanbutton.dart';
 import 'package:hookup4u/Screens/profilePicSet.dart';
+import 'package:hookup4u/models/user_model.dart';
 
 import 'package:hookup4u/util/color.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
 
-class MyInterests extends StatefulWidget {
+class UpdateMyInterests extends StatefulWidget {
+  final User currentUser;
+
   final Map<String, dynamic> userData;
 
-  MyInterests({Key? key, required this.userData}) : super(key: key);
+  UpdateMyInterests(
+      {Key? key, required this.userData, required this.currentUser})
+      : super(key: key);
 
   @override
-  _MyInterestsState createState() => _MyInterestsState();
+  _UpdateMyInterestsState createState() => _UpdateMyInterestsState();
 }
 
-class _MyInterestsState extends State<MyInterests> {
+class _UpdateMyInterestsState extends State<UpdateMyInterests> {
   bool _isProcessing = false;
 
   Set<String> selectedItems = Set<String>();
@@ -1012,19 +1017,32 @@ class _MyInterestsState extends State<MyInterests> {
                 //   }
                 // });
 
-                widget.userData.addAll({
+                // widget.userData.addAll({
+                //   'MyInterests': {
+                //     'data': selectedData,
+                //   }
+                // });
+
+                FirebaseFirestore.instance
+                    .collection("Users")
+                    .doc(widget.currentUser.id)
+                    .update({
                   'MyInterests': {
                     'data': selectedData,
                   }
-                });
-                //  print(selectedData);
+                }); // Update the document to update intrest
 
-                Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                    builder: (context) => ProfilePicSet(widget.userData),
+                print(selectedData);
+
+                showTopSnackBar(
+                  Overlay.of(context),
+                  const CustomSnackBar.success(
+                    backgroundColor: Colors.blue,
+                    message: 'Your intrestes updated successfully',
                   ),
                 );
+
+                Navigator.of(context).pop();
               },
             ),
           ),

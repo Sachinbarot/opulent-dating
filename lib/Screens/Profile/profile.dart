@@ -830,81 +830,81 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.13,
-                    margin: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.05),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: pink,
-                    ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 10),
-                        CircularPercentIndicator(
-                          radius:
-                              MediaQuery.of(context).size.width * 0.15 * 0.5,
-                          lineWidth: 1.0,
-                          percent: 0.2,
-                          center: Text(
-                            "20 %",
-                            style: TextStyle(
-                              fontFamily: AppStrings.fontname,
-                              fontWeight: FontWeight.w600,
-                              fontSize: MediaQuery.of(context).size.width *
-                                  0.18 *
-                                  0.18,
-                              color: white,
-                            ),
-                          ),
-                          progressColor: white,
-                          backgroundColor: Colors.grey,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.15 *
-                                      0.25),
-                              Text(
-                                "Complete Your Profile ".tr(),
-                                style: TextStyle(
-                                  fontFamily: AppStrings.fontname,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: MediaQuery.of(context).size.width *
-                                      0.20 *
-                                      0.20,
-                                  color: white,
-                                ),
-                              ),
-                              Text(
-                                "Complete your profile to experience \n best dating and best matches!",
-                                style: TextStyle(
-                                  fontFamily: AppStrings.fontname,
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: MediaQuery.of(context).size.width *
-                                      0.17 *
-                                      0.14,
-                                  color: white,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            // SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+            // Row(
+            //   children: [
+            //     Expanded(
+            //       child: Container(
+            //         height: MediaQuery.of(context).size.height * 0.13,
+            //         margin: EdgeInsets.symmetric(
+            //             horizontal: MediaQuery.of(context).size.width * 0.05),
+            //         decoration: BoxDecoration(
+            //           borderRadius: BorderRadius.circular(10),
+            //           color: pink,
+            //         ),
+            //         child: Row(
+            //           children: [
+            //             const SizedBox(width: 10),
+            //             CircularPercentIndicator(
+            //               radius:
+            //                   MediaQuery.of(context).size.width * 0.15 * 0.5,
+            //               lineWidth: 1.0,
+            //               percent: 0.2,
+            //               center: Text(
+            //                 "20 %",
+            //                 style: TextStyle(
+            //                   fontFamily: AppStrings.fontname,
+            //                   fontWeight: FontWeight.w600,
+            //                   fontSize: MediaQuery.of(context).size.width *
+            //                       0.18 *
+            //                       0.18,
+            //                   color: white,
+            //                 ),
+            //               ),
+            //               progressColor: white,
+            //               backgroundColor: Colors.grey,
+            //             ),
+            //             const SizedBox(width: 10),
+            //             Expanded(
+            //               child: Column(
+            //                 mainAxisAlignment: MainAxisAlignment.start,
+            //                 crossAxisAlignment: CrossAxisAlignment.start,
+            //                 children: [
+            //                   SizedBox(
+            //                       height: MediaQuery.of(context).size.height *
+            //                           0.15 *
+            //                           0.25),
+            //                   Text(
+            //                     "Complete Your Profile ".tr(),
+            //                     style: TextStyle(
+            //                       fontFamily: AppStrings.fontname,
+            //                       fontWeight: FontWeight.w600,
+            //                       fontSize: MediaQuery.of(context).size.width *
+            //                           0.20 *
+            //                           0.20,
+            //                       color: white,
+            //                     ),
+            //                   ),
+            //                   Text(
+            //                     "Complete your profile to experience \n best dating and best matches!",
+            //                     style: TextStyle(
+            //                       fontFamily: AppStrings.fontname,
+            //                       fontWeight: FontWeight.w300,
+            //                       fontSize: MediaQuery.of(context).size.width *
+            //                           0.17 *
+            //                           0.14,
+            //                       color: white,
+            //                     ),
+            //                   ),
+            //                 ],
+            //               ),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.03),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

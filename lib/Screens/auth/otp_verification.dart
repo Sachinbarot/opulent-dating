@@ -120,7 +120,7 @@ class _VerificationState extends State<Verification> {
               child: Container(
                 margin: const EdgeInsets.only(top: 100),
                 child: Text(
-                  'Enter 6-Digist Code',
+                  'Enter 6-Digit Code',
                   style: TextStyle(
                       color: black,
                       fontSize: 20,

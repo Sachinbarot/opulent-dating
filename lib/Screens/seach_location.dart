@@ -25,6 +25,7 @@ class _SearchLocationState extends State<SearchLocation> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   late MapBoxPlace _mapBoxPlace;
   TextEditingController _city = TextEditingController();
+  bool isProcessing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -143,31 +144,17 @@ class _SearchLocationState extends State<SearchLocation> {
                     : Padding(
                         padding: const EdgeInsets.only(bottom: 40),
                         child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: InkWell(
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.circular(25),
-                                ),
-                                height:
-                                    MediaQuery.of(context).size.height * .065,
-                                width: MediaQuery.of(context).size.width * .75,
-                                child: Center(
-                                    child: Text(
-                                  "CONTINUE".tr().toString(),
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: secondryColor,
-                                      fontWeight: FontWeight.bold),
-                                ))),
-                            onTap: () {
-                              CustomSnackbar.snackbar(
-                                  "Select a location !".tr().toString(),
-                                  context);
-                            },
-                          ),
-                        ),
+                            alignment: Alignment.bottomCenter,
+                            child: MyButton(
+                              textname: 'Continue',
+                              onTap: () {
+                                CustomSnackbar.snackbar(
+                                    "Select a location !".tr().toString(),
+                                    context);
+                              },
+                              radius: 50.0,
+                              isProcessing: isProcessing,
+                            )),
                       )
               ],
             ),

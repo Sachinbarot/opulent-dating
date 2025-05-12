@@ -60,13 +60,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
         .then((value) {
       packageId.addAll(value.docs.map((e) => e['id']));
     });
-
+    // print("Here it is $packageId");
+    print("purchases : $purchases");
+    print("products : $products");
+    print("packageId : $packageId");
     return packageId;
   }
 
   Future<void> _initialize() async {
     isAvailable = await _iap!.isAvailable();
     if (isAvailable!) {
+      print("inside");
       List<Future>? futures = [
         _getProducts(await _fetchPackageIds()),
         //_getpastPurchases(false),
@@ -443,7 +447,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       setState(() {
         products = response.productDetails;
         print(products!.length);
-        print(response.productDetails);
+        print(response.productDetails.length);
       });
 
       //initial selected of products

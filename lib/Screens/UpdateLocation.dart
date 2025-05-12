@@ -7,6 +7,8 @@ import 'package:hookup4u/Screens/seach_location.dart';
 import 'package:hookup4u/util/color.dart';
 import 'package:location/location.dart' as loc;
 import 'package:easy_localization/easy_localization.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart';
 
 class UpdateLocation extends StatefulWidget {
   const UpdateLocation({super.key});
@@ -84,24 +86,49 @@ class _UpdateLocationState extends State<UpdateLocation> {
   }
 }
 
-Future<Map?> getLocationCoordinates() async {
-  loc.Location location = loc.Location();
-  try {
-    await location.serviceEnabled().then((value) async {
-      if (!value) {
-        await location.requestService();
-      }
-    });
-    final coordinates = await location.getLocation();
-    // return await coordinatesToAddress(
-    //   latitude: coordinates.latitude,
-    //   longitude: coordinates.longitude,
-    // );
-  } catch (e) {
-    print(e);
+Future<Map<String, dynamic>?> getLocationCoordinates() async {
+  bool serviceEnabled;
+  LocationPermission permission;
+
+  // Check if location services are enabled
+  serviceEnabled = await Geolocator.isLocationServiceEnabled();
+  if (!serviceEnabled) {
+    await Geolocator.openLocationSettings();
     return null;
   }
+
+  // Check permission
+  permission = await Geolocator.checkPermission();
+  if (permission == LocationPermission.denied) {
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      return null;
+    }
+  }
+
+  if (permission == LocationPermission.deniedForever) {
+    return null;
+  }
+
+  // Get current position
+  Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high);
+
+  // Get human-readable address
+  List<Placemark> placemarks =
+      await placemarkFromCoordinates(position.latitude, position.longitude);
+  Placemark place = placemarks[0];
+
+  String address =
+      "${place.locality}, ${place.administrativeArea}, ${place.country}";
+
+  return {
+    'latitude': position.latitude,
+    'longitude': position.longitude,
+    'PlaceName': address,
+  };
 }
+
 
 // Future coordinatesToAddress({latitude, longitude}) async {
 //   try {

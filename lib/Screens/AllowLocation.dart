@@ -103,8 +103,12 @@ class AllowLocation extends StatelessWidget {
                   highlightColor: Colors.transparent,
                   child: commanbtn(20.0, 'Continue'),
                   onTap: () async {
+                    print("Enterd");
                     var currentLocation = await getLocationCoordinates();
+                    print("Line 1 cleared");
+                    print(currentLocation);
                     if (currentLocation != null) {
+                      print("Enterd in condition");
                       userData.addAll(
                         {
                           'location': {
@@ -119,8 +123,11 @@ class AllowLocation extends StatelessWidget {
                           },
                         },
                       );
+                      // print("Exited the condition");
                       showWelcomDialog(context);
-                      setUserData(userData);
+                      setUserData(userData).whenComplete(() {
+                        showWelcomDialog(context);
+                      });
                     }
                   },
                 ),

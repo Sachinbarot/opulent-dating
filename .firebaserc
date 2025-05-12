@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "hookup4u-f704d"
-  }
+    "default": "hookup4u-f704d",
+    "test": "testopu-7abe1",
+    "dev": "datingopulent"
+  },
+  "targets": {},
+  "etags": {}
 }

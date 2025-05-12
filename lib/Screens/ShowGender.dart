@@ -7,7 +7,6 @@ import 'package:hookup4u/Screens/commanbtn/commanbutton.dart';
 import 'package:hookup4u/Screens/personaldetails.dart';
 import 'package:hookup4u/util/color.dart';
 
-
 class ShowGender extends StatefulWidget {
   final Map<String, dynamic> userData;
   const ShowGender(this.userData, {Key? key}) : super(key: key);
@@ -68,6 +67,17 @@ class _ShowGenderState extends State<ShowGender> {
                     fontSize: 30,
                     fontFamily: AppStrings.fontname,
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  'Select who you want to see here.You can change this later.',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: black.withOpacity(0.8),
+                      fontFamily: AppStrings.fontname),
                 ),
               ),
               const SizedBox(height: 20),

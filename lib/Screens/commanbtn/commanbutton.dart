@@ -27,7 +27,7 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(radius),
-          color: isProcessing ? Colors.grey : btncolor,
+          color: isProcessing ? btncolor.withOpacity(0.2) : btncolor,
         ),
         child: Center(
           child: isProcessing
@@ -69,7 +69,7 @@ Widget backbuttoncomman(context) {
       padding: const EdgeInsets.only(top: 10.0),
       child: InkWell(
         splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onTap: () {
           Navigator.pop(context);
         },
@@ -112,7 +112,7 @@ PreferredSizeWidget? commonAppBar(BuildContext context, String headings) {
     ),
     leading: InkWell(
       splashColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: () {
         Navigator.pop(context);
       },

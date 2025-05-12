@@ -90,6 +90,7 @@ class _SexualOrientationState extends State<SexualOrientation> {
                   child: Center(
                     child: Text(
                       "My sexual \norientation is".tr().toString(),
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w700,
@@ -99,6 +100,17 @@ class _SexualOrientationState extends State<SexualOrientation> {
                   ),
                   padding: const EdgeInsets.only(left: 50, top: 100),
                 ),
+                // Padding(
+                //   padding: const EdgeInsets.all(10),
+                //   child: Text(
+                //     'choose your sexual orientation to find people.you can not change this later.',
+                //     style: TextStyle(
+                //         fontSize: 15,
+                //         fontWeight: FontWeight.w500,
+                //         color: black.withOpacity(0.8),
+                //         fontFamily: AppStrings.fontname),
+                //   ),
+                // ),
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
